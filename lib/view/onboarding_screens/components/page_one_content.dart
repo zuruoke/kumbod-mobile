@@ -7,7 +7,7 @@ class PageOneContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
+      //mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Image.asset(
           "assets/images/stake_wt_friends.png",

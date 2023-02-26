@@ -7,7 +7,7 @@ class PageThreeContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
+      //mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Image.asset(
           "assets/images/betting_bodman.png",

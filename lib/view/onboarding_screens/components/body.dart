@@ -32,9 +32,11 @@ class _OnboardingScreenBodyState extends State<OnboardingScreenBody> {
 
   @override
   Widget build(BuildContext context) {
+    final Size size = MediaQuery.of(context).size;
     return Padding(
-      padding: const EdgeInsets.symmetric(
+      padding: EdgeInsets.symmetric(
         horizontal: horizontalPadding,
+        vertical: 0.1 * size.height,
       ),
       child: Stack(
         alignment: Alignment.center,
@@ -88,9 +90,13 @@ class _OnboardingScreenBodyState extends State<OnboardingScreenBody> {
               const SizedBox(
                 height: 20,
               ),
-              const DecoratedButton(
-                text: "Get Started",
-                height: 50,
+              InkWell(
+                onTap: () =>
+                    Navigator.popAndPushNamed(context, "/signup_screen"),
+                child: const DecoratedButton(
+                  text: "Get Started",
+                  height: 50,
+                ),
               ),
               const SizedBox(
                 height: 20,
@@ -101,7 +107,7 @@ class _OnboardingScreenBodyState extends State<OnboardingScreenBody> {
                   textColor: appColor,
                   color: appColor.withOpacity(.1)),
               const SizedBox(
-                height: 40,
+                height: 30,
               ),
             ],
           ),

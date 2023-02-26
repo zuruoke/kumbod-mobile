@@ -7,7 +7,7 @@ class PageTwoContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
+      //mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Image.asset(
           "assets/images/create_team_champions.png",
