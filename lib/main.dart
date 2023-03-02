@@ -3,7 +3,9 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kumbod/routes/routes_generator.dart';
+import 'package:kumbod/view/home/home_screen.dart';
 import 'package:kumbod/view/onboarding_screens/onboarding_screen.dart';
+import 'package:kumbod/view/tab_screen/tab_screen.dart';
 
 void main() async {
   // await Hive.initFlutter();
@@ -56,6 +58,6 @@ class _KumBodAppState extends ConsumerState<KumBodApp> {
 
   @override
   Widget build(BuildContext context) {
-    return const OnboardingScreen();
+    return const TabScreen();
   }
 }
