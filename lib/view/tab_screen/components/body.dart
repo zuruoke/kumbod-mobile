@@ -3,6 +3,7 @@ import 'package:kumbod/utils/alignments/alignments.dart';
 import 'package:kumbod/utils/styles/color_style.dart';
 import 'package:kumbod/view/bod_screen/bod_screen.dart';
 import 'package:kumbod/view/home/home_screen.dart';
+import 'package:kumbod/view/profile_screen/profile_screen.dart';
 import 'package:kumbod/view/widgets/text/default_text_widget.dart';
 
 class TabScreenBody extends StatefulWidget {
@@ -23,10 +24,7 @@ class _TabScreenBodyState extends State<TabScreenBody> {
       Icons.chat,
       size: 150,
     ),
-    Icon(
-      Icons.chat,
-      size: 150,
-    ),
+    ProfileScreen(),
   ];
 
   void _onItemTapped(int index) {
