@@ -4,6 +4,7 @@ import 'package:kumbod/view/auth_screens/signup_screen/signup_screen.dart';
 import 'package:kumbod/view/bod_screen/bod_screen.dart';
 import 'package:kumbod/view/home/home_screen.dart';
 import 'package:kumbod/view/onboarding_screens/onboarding_screen.dart';
+import 'package:kumbod/view/profile_screen/components/edit_profile_screen.dart';
 import 'package:kumbod/view/profile_screen/profile_screen.dart';
 import 'package:kumbod/view/search_screen/search_screen.dart';
 import 'package:kumbod/view/widgets/errors/page_not_found_screen.dart';
@@ -26,7 +27,8 @@ class Routes {
       "/signup_screen": const SignUpScreen(),
       "/search-screen": const SearchScreen(),
       "/bod-screen": const BodScreen(),
-      ".profile-screen": const ProfileScreen(),
+      "/profile-screen": const ProfileScreen(),
+      "/edit-profile-screen": const EditProfileScreen(),
     };
 
     return routes[pathName] ?? const ErrorPageNotFoundScreen();

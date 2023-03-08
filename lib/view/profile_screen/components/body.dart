@@ -80,7 +80,8 @@ class ProfileScreenBody extends StatelessWidget {
                       height: 15,
                     ),
                     InkWell(
-                      onTap: () {},
+                      onTap: () =>
+                          Navigator.pushNamed(context, "/edit-profile-screen"),
                       child: Container(
                         height: 40,
                         width: 150,
