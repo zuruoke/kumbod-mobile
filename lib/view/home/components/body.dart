@@ -1,6 +1,7 @@
 // ignore_for_file: use_full_hex_values_for_flutter_colors
 
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:kumbod/utils/alignments/alignments.dart';
 import 'package:kumbod/utils/styles/color_style.dart';
 import 'package:kumbod/utils/styles/text_style.dart';
@@ -60,19 +61,28 @@ class HomeScreenBody extends StatelessWidget {
                       ],
                     ),
                     Container(
-                      height: 50,
-                      width: 50,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        border: Border.all(
-                            color: const Color(0xFF22172A), width: 1.0),
-                      ),
-                      child: const Icon(
-                        Icons.notifications_active,
-                        size: 28,
-                        color: textColor,
-                      ),
-                    )
+                        height: 50,
+                        width: 50,
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          border: Border.all(
+                            color: const Color(0xFF22172A),
+                            width: 1.0,
+                          ),
+                        ),
+                        child: SvgPicture.asset(
+                          "assets/images/notification_active.svg",
+                          width: 30,
+                          height: 30,
+                        )
+
+                        // const Icon(
+                        //   Icons.notifications_active,
+                        //   size: 28,
+                        //   color: textColor,
+                        // ),
+                        )
                   ],
                 ),
               ),
@@ -236,16 +246,22 @@ class HomeScreenBody extends StatelessWidget {
                           ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: const [
-                              Icon(
-                                Icons.sports_football_rounded,
-                                size: 22,
+                            children: [
+                              SvgPicture.asset(
+                                "assets/images/sports_soccer.svg",
+                                width: 22,
+                                height: 22,
                                 color: Colors.white,
                               ),
-                              DefaultTextWidget(
+                              // Icon(
+                              //   Icons.sports_football_rounded,
+                              //   size: 22,
+                              //   color: Colors.white,
+                              // ),
+                              const DefaultTextWidget(
                                 text: "Football",
                                 fontSize: 12,
-                                fontWeight: FontWeight.w700,
+                                fontWeight: FontWeight.w600,
                                 textColor: Colors.white,
                               )
                             ],

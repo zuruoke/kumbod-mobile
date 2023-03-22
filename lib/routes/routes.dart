@@ -7,6 +7,7 @@ import 'package:kumbod/view/onboarding_screens/onboarding_screen.dart';
 import 'package:kumbod/view/profile_screen/components/edit_profile_screen.dart';
 import 'package:kumbod/view/profile_screen/profile_screen.dart';
 import 'package:kumbod/view/search_screen/search_screen.dart';
+import 'package:kumbod/view/wallet_screen/wallet_screen.dart';
 import 'package:kumbod/view/widgets/errors/page_not_found_screen.dart';
 
 class Routes {
@@ -28,6 +29,7 @@ class Routes {
       "/search-screen": const SearchScreen(),
       "/bod-screen": const BodScreen(),
       "/profile-screen": const ProfileScreen(),
+      "/wallet-screen": const WalletScreen(),
       "/edit-profile-screen": const EditProfileScreen(),
     };
 

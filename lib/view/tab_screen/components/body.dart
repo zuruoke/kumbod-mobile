@@ -1,9 +1,13 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:kumbod/utils/alignments/alignments.dart';
 import 'package:kumbod/utils/styles/color_style.dart';
 import 'package:kumbod/view/bod_screen/bod_screen.dart';
 import 'package:kumbod/view/home/home_screen.dart';
 import 'package:kumbod/view/profile_screen/profile_screen.dart';
+import 'package:kumbod/view/wallet_screen/wallet_screen.dart';
 import 'package:kumbod/view/widgets/text/default_text_widget.dart';
 
 class TabScreenBody extends StatefulWidget {
@@ -20,10 +24,7 @@ class _TabScreenBodyState extends State<TabScreenBody> {
   static const List<Widget> _pages = <Widget>[
     HomeScreen(),
     BodScreen(),
-    Icon(
-      Icons.chat,
-      size: 150,
-    ),
+    WalletScreen(),
     ProfileScreen(),
   ];
 
@@ -43,23 +44,29 @@ class _TabScreenBodyState extends State<TabScreenBody> {
         unselectedItemColor: const Color(0xFF758494),
         type: BottomNavigationBarType.fixed,
         selectedItemColor: appColor,
-        items: const <BottomNavigationBarItem>[
+        items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
+            icon: _selectedIndex == 0
+                ? SvgPicture.asset("assets/images/home_active.svg")
+                : SvgPicture.asset("assets/images/home.svg"),
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.camera),
+            icon: _selectedIndex == 1
+                ? SvgPicture.asset("assets/images/bod_active.svg")
+                : SvgPicture.asset("assets/images/bod.svg"),
             label: 'Bods',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.chat),
+            icon: _selectedIndex == 2
+                ? SvgPicture.asset("assets/images/wallet_active.svg")
+                : SvgPicture.asset("assets/images/wallet.svg"),
             label: 'Wallet',
           ),
           BottomNavigationBarItem(
-            icon: Icon(
-              Icons.person,
-            ),
+            icon: _selectedIndex == 3
+                ? SvgPicture.asset("assets/images/person_active.svg")
+                : SvgPicture.asset("assets/images/person.svg"),
             label: 'Profile',
           ),
         ],
@@ -93,9 +100,12 @@ class _TabScreenBodyState extends State<TabScreenBody> {
                     ),
                     FloatingActionButton(
                       onPressed: () {},
-                      tooltip: 'Add',
+                      tooltip: 'Join',
                       backgroundColor: appColor,
-                      child: const Icon(Icons.add),
+                      child: SvgPicture.asset(
+                        "assets/images/bod_active.svg",
+                        color: Colors.white,
+                      ),
                     ),
                   ],
                 ),
@@ -146,7 +156,10 @@ class _TabScreenBodyState extends State<TabScreenBody> {
                       },
                       tooltip: 'Cancel',
                       backgroundColor: appColor,
-                      child: const Icon(Icons.cancel_rounded),
+                      child: SvgPicture.asset(
+                        "assets/images/plus-2.svg",
+                        color: Colors.white,
+                      ),
                     ),
                   ],
                 ),

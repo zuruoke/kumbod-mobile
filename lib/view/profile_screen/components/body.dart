@@ -144,6 +144,14 @@ class ProfileScreenBody extends StatelessWidget {
                       height: 20,
                     ),
                     ProfileListTile(
+                      text: "Delete",
+                      icon: Icons.delete_rounded,
+                      iconColor: Colors.red,
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    ProfileListTile(
                       text: "Logout",
                       icon: Icons.logout_rounded,
                       iconColor: Colors.red,

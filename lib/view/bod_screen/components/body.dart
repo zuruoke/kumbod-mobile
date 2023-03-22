@@ -40,70 +40,100 @@ class _BodScreenBodyState extends State<BodScreenBody> {
                     horizontal: horizontalPadding, vertical: verticalPadding),
                 child: Column(
                   children: [
-                    SizedBox(
-                      height: 48,
-                      width: size.width,
-                      child: Stack(children: [
-                        Container(
-                          height: 48,
-                          width: size.width,
-                          decoration: BoxDecoration(
-                            color: const Color(0xFFF5FAFF),
-                            borderRadius: BorderRadius.circular(16),
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [
-                              TextButton(
-                                onPressed: () {
-                                  setState(() {
-                                    pageIndex = 0;
-                                  });
-                                },
-                                child: const DefaultTextWidget(
-                                  fontSize: 14.5,
-                                  text: "For you",
-                                  textColor: appColor,
-                                  fontWeight: FontWeight.w500,
-                                ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        InkWell(
+                          onTap: () => setState(() => pageIndex = 0),
+                          child: Container(
+                            height: 38,
+                            width: pageIndex == 0
+                                ? 0.35 * size.width
+                                : 0.25 * size.width,
+                            alignment: Alignment.center,
+                            decoration: BoxDecoration(
+                              color: pageIndex == 0
+                                  ? const Color(0xFFF5FAFF)
+                                  : Colors.white,
+                              borderRadius: BorderRadius.circular(8),
+                              border: Border.all(
+                                color: pageIndex == 0
+                                    ? appColorShade
+                                    : const Color(0xFF758494),
+                                width: 1,
                               ),
-                              TextButton(
-                                onPressed: () {
-                                  setState(() {
-                                    pageIndex = 1;
-                                  });
-                                },
-                                child: const DefaultTextWidget(
-                                  fontSize: 14.5,
-                                  text: "Friends",
-                                  textColor: appColor,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
-                            ],
+                            ),
+                            child: DefaultTextWidget(
+                              fontSize: 14.5,
+                              text: "For you",
+                              textColor: pageIndex == 0
+                                  ? appColorShade
+                                  : const Color(0xFF758494),
+                              fontWeight: FontWeight.w200,
+                            ),
                           ),
                         ),
-                        Positioned(
-                            top: 6,
-                            left: pageIndex == 0 ? 6 : null,
-                            right: pageIndex == 1 ? 6 : null,
-                            bottom: 6,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(16),
+                        InkWell(
+                          onTap: () => setState(() => pageIndex = 1),
+                          child: Container(
+                            height: 38,
+                            width: pageIndex == 1
+                                ? 0.35 * size.width
+                                : 0.25 * size.width,
+                            alignment: Alignment.center,
+                            decoration: BoxDecoration(
+                              color: pageIndex == 1
+                                  ? const Color(0xFFF5FAFF)
+                                  : Colors.white,
+                              borderRadius: BorderRadius.circular(8),
+                              border: Border.all(
+                                color: pageIndex == 1
+                                    ? appColorShade
+                                    : const Color(0xFF758494),
+                                width: 1,
                               ),
-                              alignment: Alignment.center,
-                              height: 36,
-                              width: 0.43 * size.width,
-                              child: DefaultTextWidget(
-                                fontSize: 14.5,
-                                text: pageIndex == 0 ? "For you" : "Friends",
-                                textColor: appColor,
-                                fontWeight: FontWeight.w500,
+                            ),
+                            child: DefaultTextWidget(
+                              fontSize: 14.5,
+                              text: "Friends",
+                              textColor: pageIndex == 1
+                                  ? appColorShade
+                                  : const Color(0xFF758494),
+                              fontWeight: FontWeight.w200,
+                            ),
+                          ),
+                        ),
+                        InkWell(
+                          onTap: () => setState(() => pageIndex = 2),
+                          child: Container(
+                            height: 38,
+                            width: pageIndex == 2
+                                ? 0.35 * size.width
+                                : 0.25 * size.width,
+                            alignment: Alignment.center,
+                            decoration: BoxDecoration(
+                              color: pageIndex == 2
+                                  ? const Color(0xFFF5FAFF)
+                                  : Colors.white,
+                              borderRadius: BorderRadius.circular(8),
+                              border: Border.all(
+                                color: pageIndex == 2
+                                    ? appColorShade
+                                    : const Color(0xFF758494),
+                                width: 1,
                               ),
-                            ))
-                      ]),
+                            ),
+                            child: DefaultTextWidget(
+                              fontSize: 14.5,
+                              text: "Active Bods",
+                              textColor: pageIndex == 2
+                                  ? appColorShade
+                                  : const Color(0xFF758494),
+                              fontWeight: FontWeight.w200,
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ],
                 ),
